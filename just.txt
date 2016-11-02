@@ -1,0 +1,68 @@
+function myFunctioon() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+   
+    var x = document.getElementById("numb").value;
+
+   
+    if(dd<10){
+        dd='0'+dd;
+    } 
+    if(mm<10){
+        mm='0'+mm;
+    } 
+    var todayy = mm+'/'+dd+'/'+yyyy;
+    var today = yyyy+'/'+mm+'/'+dd;
+    document.getElementById("DATE").value = today;
+	
+    if (x == null || x == "") {
+        alert("Number must be filled out !!");
+        document.getElementById("numb").focus();
+        return false;
+    }else if(isNaN(x))
+    {
+        alert("Please enter a Numeric Value !!");
+        document.getElementById("numb").value = "";
+        document.getElementById("numb").focus();
+    }else 
+    {
+        if( document.getElementById("pdate").value <= today){
+            alert("Please enter a date greater than the current date !!");
+            document.getElementById("pdate").value = "";
+            document.getElementById("pdate").focus();
+        }
+    }
+	
+}
+
+////////////////////////////////////
+
+if(request.readyState==4 && request.status == 200){
+			var myArr = JSON.parse(request.responseText);
+			alert(request.responseText);
+			myFunction(myArr);
+		}
+		function myFunction(arr) {
+		    var out = "";
+		    var i;
+		    for(i = 0; i < arr.length; i++) {
+		    	//alert(arr[1])
+		    }
+		        out += '<option value="' + arr[i] + '">' + arr[i] + '</option>';
+		    }
+		alert(arr[1])
+		    document.getElementById("v1").innerHTML = out;
+
+////////////////////////////////////////////////////////////
+<option value="Discovery">Discovery</option>
+											<option value="Liberty">Liberty</option>
+											<option value="NedBank">NedBank</option>
+											<option value="Stardadbank">Stardadbank</option>
+/////////////////////////////////////
+
+
+<option value="Java">Java</option>
+											<option value="C#">C#</option>
+											<option value="SQL">MySql</option>
